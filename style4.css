@@ -1,0 +1,51 @@
+body{
+    margin: 0px;
+    min-height: 100vh;
+    background-color: rgb(244, 244, 122);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login{
+    padding: 8px 12px;
+    background-color: whitesmoke;
+    height: 320px;
+    width: 300px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    border-radius: 20px;
+}
+.login span{
+    font-size:20px;
+    font-weight: bold;
+}
+.login a{
+    font-size: small;
+    font-weight: lighter;
+    color: grey;
+}
+input{
+    width: 200px;
+    padding: 4px 6px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    font-size: small;
+}
+.login input::placeholder{
+    color: gray;
+    font-size: smaller;
+
+}
+
+.submit{
+    border: 2px solid grey;
+    padding: 12px 16px;
+    border-radius: 20px;
+    background-color: rgb(229, 214, 73);
+    color: white;
+    font-weight: 700;
+}

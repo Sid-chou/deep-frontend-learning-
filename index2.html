@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Farewell News Template</title>
+        <style>
+            /* 1. Global Reset & Newspaper Paper Background */
+            body {
+                margin: 0;
+                padding: 40px;
+                background-color: #f1ede1; /* A slight, aged paper tint */
+                font-family: serif; /* Default serif for newspaper feel */
+                color: #222;
+                display: flex;
+                justify-content: center;
+            }
+
+            /* 2. Container (The Page) */
+            .newspaper-page {
+                width: 800px; /* Standard A4ish width for layout */
+                background: #fff;
+                border: 1px solid #d3cbb1;
+                padding: 20px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* 3. Header Styling */
+            .header {
+                border-bottom: 2px solid #000;
+                margin-bottom: 10px;
+                text-align: center;
+                padding-bottom: 5px;
+            }
+
+            .special-edition {
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .main-title {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 72px;
+                font-weight: 900;
+                letter-spacing: 3px;
+                margin: 10px 0;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 0px #000;
+            }
+
+            .divider {
+                height: 1px;
+                background-color: #000;
+                margin-bottom: 5px;
+            }
+
+            /* 4. Sub-Header: HAPPY JOURNEY */
+            .sub-header {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 28px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                border-bottom: 2px solid #000;
+                padding-bottom: 5px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            /* 5. Main Content Area (Two Columns) */
+            .content-area {
+                display: flex;
+                gap: 20px;
+                flex-grow: 1;
+            }
+
+            /* 6. Left Column (Wide) */
+            .main-column {
+                flex: 2.2; /* Takes up most of the width */
+                display: flex;
+                flex-direction: column;
+            }
+
+            .main-photo-wrapper {
+                width: 100%;
+                margin-bottom: 15px;
+                border-bottom: 1px solid #000;
+            }
+
+            /* Placeholder for the main photo. Replace with your <img> tag */
+            .main-photo-placeholder {
+                width: 100%;
+                height: 400px;
+                background-color: #eee;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #999;
+                font-size: 24px;
+                font-family: sans-serif;
+                margin-bottom: 5px;
+            }
+
+            .photo-caption {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 14px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #000;
+                letter-spacing: 0.5px;
+                margin-bottom: 10px;
+            }
+
+            .long-letter {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 18px;
+                line-height: 1.6;
+                text-align: justify;
+                color: #1a1a1a;
+            }
+
+            /* 7. Right Column (Sidebar) */
+            .sidebar {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* Basic styling for sidebar text blocks */
+            .sidebar-text-block {
+                font-family: sans-serif; /* Sidebars often use a simple sans-serif */
+                font-size: 13px;
+                line-height: 1.5;
+                text-align: justify;
+                text-transform: uppercase;
+                color: #000;
+                letter-spacing: 0.2px;
+            }
+
+            /* The "FRIENDSHIP LIKE NO OTHER" block */
+            .quote-block-1 {
+                font-weight: bold;
+            }
+
+            /* Standardized placeholder for smaller photos */
+            .sidebar-photo-placeholder {
+                width: 100%;
+                height: 180px;
+                background-color: #eee;
+                border: 1px solid #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #999;
+            }
+
+            /* Sidebar text that is NOT all-caps (like the middle section) */
+            .sidebar-normal-text {
+                font-family: "Times New Roman", Times, serif;
+                text-transform: none; /* Turn off all caps */
+                font-size: 16px;
+                text-decoration: underline; /* Matching the image */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="newspaper-page">
+            <div class="header">
+                <div class="special-edition">Special Edition</div>
+                <div class="main-title">TIMES OF INDIA</div>
+                <div class="divider"></div>
+                <div class="special-edition">
+                    FAREWELL GIFT FOR YOUR GOLDEN (E/C)
+                </div>
+            </div>
+
+            <div class="sub-header">Happy Journey, I'll Miss You ❤️</div>
+
+            <div class="content-area">
+                <div class="main-column">
+                    <div class="main-photo-wrapper">
+                        <div class="main-photo-placeholder">
+                            MAIN PHOTO GOES HERE
+                        </div>
+
+                        <div class="photo-caption">
+                            YOU ARE A BEAUTIFUL HUMAN BEING :)
+                        </div>
+                    </div>
+
+                    <div class="long-letter">
+                        To sharing beautiful sunsets, exploring new horizons,
+                        and making memories that will stay with us forever. We
+                        hope you find every reason to smile, and every adventure
+                        leads you to something extraordinary. May you always be
+                        surrounded by love, laughter, and everything that makes
+                        life worth celebrating.
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-text-block quote-block-1">
+                        FROM EARLY DAYS TO LIFELONG MEMORIES: A FRIENDSHIP LIKE
+                        NO OTHER.
+                    </div>
+
+                    <div class="sidebar-photo-placeholder">SIDEBAR PHOTO 1</div>
+
+                    <div class="sidebar-text-block sidebar-normal-text">
+                        Through every moment, you've brought warmth into my life
+                        and I'll always be there for you.
+                    </div>
+
+                    <div class="sidebar-text-block quote-block-1">
+                        THANK YOU FOR BEING MY ENDLESS REASON TO SMILE.
+                    </div>
+
+                    <div class="sidebar-photo-placeholder">SIDEBAR PHOTO 2</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

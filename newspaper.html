@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Times of India Birthday Newspaper</title>
+
+        <style>
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                background: #d8d8d8;
+                font-family: "Times New Roman", Georgia, serif;
+                color: #111;
+            }
+
+            .page {
+                width: 210mm;
+                height: 297mm;
+                margin: 0 auto;
+                background: #f7f1e7;
+                padding: 9mm 9mm 8mm;
+                position: relative;
+                overflow: hidden;
+                page-break-after: always;
+            }
+
+            .page.clean {
+                background:
+                    linear-gradient(
+                        rgba(255, 255, 255, 0.25),
+                        rgba(255, 255, 255, 0.25)
+                    ),
+                    #f4eee4;
+            }
+
+            .top-strip {
+                display: flex;
+                justify-content: space-between;
+                align-items: normal;
+                font-size: 13px;
+                margin-bottom: 3mm;
+                letter-spacing: 0.2px;
+            }
+
+            .top-strip .center {
+                text-align: center;
+                font-size: 25px;
+                line-height: 1;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            .top-strip .right {
+                text-align: right;
+            }
+
+            .masthead {
+                width: 100%;
+                padding: 12px 24px;
+                background: #f6eee7;
+                border-top: 2px solid #222;
+                border-bottom: 2px solid #222;
+                text-align: center;
+                overflow: hidden;
+            }
+
+            .masthead.times {
+                font-size: 64px;
+                margin-top: 1mm;
+                margin-bottom: 3mm;
+            }
+
+            .masthead.bestie {
+                margin: 0;
+                font-family: "Bodoni Moda", "Libre Bodoni", serif;
+                font-size: clamp(42px, 7vw, 68px);
+                font-weight: 500;
+                line-height: 0.95;
+                text-transform: uppercase;
+                letter-spacing: 0.02em;
+                white-space: nowrap;
+            }
+
+            .double-rule {
+                border-top: 3px solid #111;
+                border-bottom: 1.5px solid #111;
+                height: 6px;
+                margin: 0 0 4mm;
+            }
+
+            .single-rule {
+                border-top: 2px solid #111;
+                margin: 3mm 0;
+            }
+
+            .thin-rule {
+                border-top: 1.3px solid #111;
+                margin: 2.4mm 0;
+            }
+
+            .birthday-title {
+                text-align: center;
+                font-size: 26px;
+                font-weight: bold;
+                letter-spacing: 1.7px;
+                margin: 3mm 0 3mm;
+                text-transform: uppercase;
+            }
+
+            .page-one-grid {
+                display: grid;
+                grid-template-columns: 2.55fr 1fr;
+                gap: 5mm;
+                align-items: start;
+            }
+
+            .photo-box {
+                background: #d6d6d6;
+                border: 1.4px solid #222;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: #555;
+                font-family: Arial, sans-serif;
+                font-size: 13px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+            .photo-box.large-main {
+                width: 100%;
+                height: 135mm;
+            }
+
+            .photo-box.side-photo {
+                width: 100%;
+                height: 63mm;
+                margin: 2mm 0 3mm;
+            }
+
+            .photo-box.side-photo-bottom {
+                width: 100%;
+                height: 63mm;
+                margin-top: 2.2mm;
+            }
+
+            .main-caption {
+                text-align: center;
+                font-size: 15px;
+                font-weight: bold;
+                margin-top: 2.2mm;
+                text-transform: uppercase;
+            }
+
+            .caption-rule {
+                border-top: 1.3px solid #111;
+                margin-top: 2mm;
+            }
+
+            .side-column {
+                border-left: 1.6px solid #111;
+                padding-left: 4mm;
+                min-height: 210mm;
+            }
+
+            .side-heading {
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 0.9;
+                text-transform: uppercase;
+                margin-bottom: 2mm;
+            }
+
+            .side-underlined {
+                font-size: 13.5px;
+                line-height: 1.35;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+                margin-bottom: 4mm;
+                text-align: justify;
+            }
+
+            .side-thanks {
+                font-size: 16px;
+                line-height: 1.05;
+                /*text-transform: uppercase;*/
+                margin-top: 2mm;
+            }
+
+            .bottom-message {
+                margin-top: 3mm;
+                font-size: 20px;
+                line-height: 1.08;
+                font-style: italic;
+                text-align: justify;
+                flex: 1;
+            }
+
+            .page-two-top-rule {
+                border-top: 3px solid #111;
+                border-bottom: 1.5px solid #111;
+                height: 6px;
+                margin-top: 1mm;
+                margin-bottom: 5mm;
+            }
+
+            .page-two .page-two-upper {
+                display: grid;
+                grid-template-columns: 1.35fr 1fr;
+                gap: 6mm;
+                align-items: stretch;
+                margin-bottom: 4mm;
+            }
+
+            .photo-box.page-two-main {
+                width: 100%;
+                height: 104mm;
+            }
+
+            .page-two .page-two-upper article,
+            .page-two .page-two-lower article {
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                height: 100%;
+            }
+
+            .page-two .flex-1 {
+                flex: 1 1 auto;
+                min-height: 0;
+            }
+
+            .love-title {
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 1;
+                text-transform: uppercase;
+                /*margin-bottom: 4mm;*/
+                font-style: italic;
+            }
+
+            .love-text {
+                font-size: 20px;
+                line-height: 1.12;
+                text-align: justify;
+                margin: 4px 0 0;
+            }
+            .love-text dt {
+                font-size: 1.2rem; /* Larger font size */
+                font-weight: 600; /* Slightly thicker as we discussed earlier */
+                margin-top: 10px; /* Adds space before each new question */
+                color: #000; /* Keeps it sharp */
+            }
+
+            .love-text dt:first-child {
+                margin-top: 8;
+            }
+
+            /* This targets ONLY the Answers */
+            .love-text dd {
+                font-size: 1rem; /* Standard size */
+                margin-left: 0; /* Removes default browser indentation */
+                color: #444; /* Optional: slightly lighter color for contrast */
+            }
+
+            .page-two .page-two-lower {
+                display: grid;
+                grid-template-columns: 1.25fr 0.85fr;
+                gap: 6mm;
+                align-items: stretch;
+                border-top: 1.5px solid #111;
+                padding-top: 4mm;
+            }
+
+            .thanks-title {
+                font-size: 22px;
+                line-height: 0.95;
+                font-style: italic;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                text-align: justify;
+                margin-bottom: 2mm;
+            }
+
+            .thanks-body {
+                font-size: 16.5px;
+                line-height: 1.08;
+                text-align: justify;
+            }
+
+            .photo-box.page-two-bottom {
+                width: 100%;
+                height: 107mm;
+            }
+
+            .bottom-love {
+                font-size: 24px;
+                font-weight: bold;
+                font-style: italic;
+                text-align: right;
+                margin-top: 1mm;
+                text-transform: uppercase;
+            }
+
+            .heart {
+                color: #b41c1c;
+                font-size: 23px;
+            }
+
+            @media print {
+                body {
+                    background: white;
+                }
+
+                .page {
+                    margin: 0;
+                    box-shadow: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- PAGE 1 -->
+        <section class="page clean">
+            <div class="top-strip">
+                <div>Special Edition</div>
+                <!--<div class="center">❦ ❧ ❦</div>-->
+                <div class="right">2026</div>
+            </div>
+            <div class="double-rule"></div>
+            <div class="masthead times">TIMES OF INDIA</div>
+
+            <div class="double-rule"></div>
+
+            <div class="birthday-title">
+                HAPPY BIRTHDAY ANSUREE <span class="heart">❤❤❤</span>
+            </div>
+
+            <div class="thin-rule"></div>
+
+            <div class="page-one-grid">
+                <div>
+                    <div class="photo-box large-main">ADD PHOTO HERE</div>
+
+                    <div class="main-caption">
+                        Special Birthday Edition: The Girl Who Made Everything
+                        Softer
+                    </div>
+
+                    <div class="caption-rule"></div>
+
+                    <div class="bottom-message">
+                        Happy birthday Januuu. The God's Child has born today
+                        completing her 23 years on this earth . My labuuu ,
+                        yayyyy!!! I m sooooo happy , seeing you smiling and
+                        shining is everyday is mere present in itself .Ek asa
+                        person , jisko har ek quality from start to end pin
+                        point perfect banaya h , isko ab gift nhi bole toh kya
+                        bole. You are the gift for everyone life , no amount
+                        physical thing can replace the presence which you bring
+                        to every moment of others life.
+                    </div>
+                </div>
+
+                <aside class="side-column">
+                    <div class="side-heading">
+                        FROM EARLY DAYS <br />
+                        EVEN SCIENCE CANT FIGURE <br />
+                        HOW YOU LOOK YOUNGER EVERY SINGLE DAY
+                    </div>
+
+                    <div class="photo-box side-photo">ADD PHOTO HERE</div>
+
+                    <div class="side-underlined">
+                        Most Loved Girl Marks Another Year<br />
+                        of Being Unforgettable
+                    </div>
+                    <div class="thin-rule"></div>
+                    <div class="side-thanks">
+                        <strong>Wanted:</strong> one more lifetime with her<br />
+                        <strong>Found:</strong> my favorite person<br />
+                        <strong>Missing:</strong> words big enough for her<br />
+                    </div>
+
+                    <div class="photo-box side-photo-bottom">
+                        ADD PHOTO HERE
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="page clean page-two">
+            <!--<div class="double-rule"></div>-->
+            <div class="masthead bestie">BESTIE BULLETIN</div>
+
+            <div class="page-two-top-rule"></div>
+
+            <div class="page-two-upper">
+                <div class="photo-box page-two-main">ADD PHOTO HERE</div>
+
+                <article>
+                    <div class="love-title">
+                        An Interview With The Birthday Girl
+                    </div>
+
+                    <dl class="love-text">
+                        <dt>Q: What is her greatest talent?</dt>
+                        <dd>
+                            A: The Meledious sound of her.Every fibre of human being can be attached to that voice.
+                        </dd>
+
+                        <dt>
+                            Q: What is something she does better than anyone
+                            else?
+                        </dt>
+                        <dd>
+                            A: Her fragnace choice .....holy moly
+                        </dd>
+
+                        <dt>Q: What is her most dangerous trait?</dt>
+                        <dd>
+                            A: She can fix a bad day with one smile and A War can be stopped.
+                        </dd>
+                    </dl>
+                </article>
+            </div>
+
+            <div class="page-two-lower">
+                <article>
+                    <div class="thanks-title">
+                        Feature Story: The Kind of Beauty You Feel Before You See
+                    </div>
+
+                    <div class="thanks-body flex-1">
+                        The real her has always been soft in the strongest way.<br>
+                        <br>
+                        She carries care so naturally, people often miss how much strength it takes. 
+                        Her softness is not simple. Her empathy was earned. <br>    
+                     
+                        That is what makes her, her.<br>
+                        The things she has carried did not harden her. They shaped her. They gave her depth, grace, and a kind of quiet strength that makes people feel safe around her.
+                        <br>
+                        A room feels lighter when she enters. People listen when she speaks. Her words carry weight. The way she stands up for others, especially when it matters most, deserves more credit than it gets.
+                        <br>
+                        There is something magnetic about her. The way she cares. The way she loves. The way she laughs, sings, and makes even ordinary moments feel softer.
+                        <br>
+                        She has always been strong. Still gentle. Still feminine. Still full of care. That has never changed.
+                        
+                        <br>What I admire most is the peace she carries within herself. She moves with a quiet kind of balance, the kind that cannot be faked.
+                        <br>And loving her changed me.
+                        
+                    </div>
+                </article>
+
+                <div>
+                    <div class="photo-box page-two-bottom">ADD PHOTO HERE</div>
+
+                    <div class="bottom-love">Adore You.</div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
