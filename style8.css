@@ -1,0 +1,173 @@
+body{
+    justify-items: center;
+}
+.hero{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;   
+    /* this one wAS NEW  */
+    padding: 12px;
+    
+}
+.hero h1{
+    font-display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    margin-bottom: 12px;
+    color: rgb(75, 75, 75);
+}
+.hero p{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: rgb(127, 127, 127);
+    font-weight: 600;
+}
+.toggle-container{
+    display: flex;
+    gap: 6px;
+    border: 1px solid rgb(117, 117, 117) ;
+    padding: 4px 4px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: small;
+    margin-bottom: 20px ;
+}
+.toggle-btn{
+    padding:8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #222;
+}
+.active{
+    background-color: #43c09d;
+    color:whitesmoke;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.wrapper{
+    display: flex;
+    gap: 20px;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 480px;
+    width:400px;
+    border: 2px solid rgb(226, 226, 226);
+    padding: 8px 28px;
+    gap: 32px;
+    border-radius: 20px;
+    box-shadow: 2px 4px 4px 0px rgba(73, 73, 73, 0.2);
+    
+}
+.featured{
+    height: 528px;
+}
+.adv{
+    background-color: rgb(70, 231, 89);
+    color: white;
+    height: 528px;
+    /* padding: 16px 16px; */
+}
+.card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-header h2{
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+}
+.card-header p{
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid rgb(226, 226, 226);
+    padding: 4px 8px;
+    border-radius: 16px;
+    color: rgb(146, 137, 137);
+    box-shadow: 2px 2px 4px 0px rgb(231, 231, 231);
+}
+.lo p{
+    box-shadow: none;
+}
+.pro p{
+    background-color: rgb(70, 231, 89);
+    color: white;
+}
+
+
+.price{
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.amt{
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    color: rgb(6, 6, 6);
+    line-height:0.75;
+    font-weight: 500;
+}
+.ano{
+    color: white;
+}
+.month{
+    font-size: 20px;
+    color: rgb(102, 101, 101);
+
+}
+.btn{
+    padding: 8px;
+    background-color: white;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size:18px;
+    font-weight: 600;
+    align-items: center;
+    color: rgb(98, 98, 98);
+    border: 2px solid rgb(231, 231, 231);
+    box-shadow: 4px 8px 12px 0px rgb(231, 231, 231);
+}
+.up{
+    background-color: rgb(70, 231, 89);
+    color: white;
+}
+.adv-btn{
+    background-color: white;
+    color: rgb(70, 231, 89);
+    box-shadow: none;
+    border: 2px solid white;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.content p{
+    font-size: 16px;
+    font-weight: 900;
+    opacity: 0.76;
+}
+.content a{
+    font-weight: 600;
+    word-spacing: 2px;
+    padding: 2px;
+    font-size: 16px;
+    color: rgb(123, 123, 123);
+
+}
+.adv p{
+    opacity: 1;
+    color: white;
+}
+.adv a{
+    color: white;
+}
